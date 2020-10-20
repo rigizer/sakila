@@ -41,6 +41,8 @@
 		</script>
 	</head>
 	<body>
+		<br><br><br><br><br><br>
+	
 		<div class="container">
 			<div class="align-self-center">
 				<h1 class="text-center login-title">Sakila DVD Log-in</h1>
@@ -48,7 +50,7 @@
 				<br>
 				
 				<form id="loginForm">
-					<table class="table table-striped" style="margin: auto; text-align: center;">
+					<table class="table table-striped" style="margin: auto; text-align: center; width: 50%;">
 						<tr>
 							<td>
 								<div class="container">
