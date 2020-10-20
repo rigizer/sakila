@@ -19,6 +19,6 @@ public class DBListener implements ServletContextListener {
     
     // TOMCAT이 꺼질 때 실행
     public void contextDestroyed(ServletContextEvent arg0)  { 
-         
+         // 주석
     }
 }
