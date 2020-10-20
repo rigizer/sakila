@@ -39,15 +39,6 @@ public class StatsService {
 			System.out.println("Debug: this.getToday() 실행");
 			
 			returnStats = statsDao.selectDay(conn, stats);
-			
-			if (returnStats != null) {	// 날짜를 확인하여 날짜가 존재하는 경우 (null이 아닌 경우)
-				System.out.println("updateStats 메소드를 수행합니다. 기존 날짜에 데이터를 갱신하여 카운트합니다.");
-				statsDao.updateStats(conn, stats);
-			} else {	// 날짜를 확인하여 날짜가 존재하지 않는 경우 (null인 경우)
-				System.out.println("insertStats 메소드를 수행합니다. 오늘 날짜로 새로운 데이터를 생성합니다.");
-				statsDao.insertStats(conn, stats);
-			}
-			
 			conn.commit();
 		} catch(Exception e) {
 			try {
