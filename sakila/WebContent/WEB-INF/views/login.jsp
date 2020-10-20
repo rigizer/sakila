@@ -6,6 +6,20 @@
 		<meta charset="UTF-8">
 		<title>login.jsp</title>
 		
+		<!-- Bootstrap Framework 사용 -->
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		
 		<!-- jQuery Google CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
@@ -27,22 +41,55 @@
 		</script>
 	</head>
 	<body>
-		<h1>Login Form</h1>
-		
-		<div>
-			오늘 접속자 수 : ${stats.count}
+		<div class="container">
+			<div class="align-self-center">
+				<h1 class="text-center login-title">Sakila DVD Log-in</h1>
+				
+				<br>
+				
+				<form id="loginForm">
+					<table class="table table-striped" style="margin: auto; text-align: center;">
+						<tr>
+							<td>
+								<div class="container">
+									<input type="text" class="form-control" placeholder="E-mail" id="email">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="container">
+									<input type="password" class="form-control" placeholder="PW" id="pw">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="container">
+									<button type="button" class="btn btn-primary btn-block" id="btn">Log-in</button>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			
+			<br>
+			
+			<table class="table table-striped" style="margin: auto; text-align: center; width: 50%">
+				<tr>
+					<td width="40%">
+						<div class="container">
+							Today
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							${stats.count}
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
-		
-		<form id="loginForm">
-			<div>
-				<input type="text" placeholder="E-mail" id="email">
-			</div>
-			<div>
-				<input type="password" placeholder="PW" id="pw">
-			</div>
-			<div>
-				<button type="button" id="btn">Log-in</button>
-			</div>
-		</form>
 	</body>
 </html>
