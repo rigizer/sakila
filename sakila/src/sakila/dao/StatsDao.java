@@ -23,8 +23,8 @@ public class StatsDao {
 			returnStats = new Stats();	// updateStats
 			returnStats.setDay(rs.getString("day"));
 			System.out.println("Debug: day("+ rs.getString("day") +")");
-			returnStats.setCount(rs.getLong("count"));
-			System.out.println("Debug: count("+ rs.getLong("count") +")");
+			returnStats.setCount(rs.getLong("cnt"));
+			System.out.println("Debug: cnt("+ rs.getLong("cnt") +")");
 		}
 		
 		return returnStats;		// insertStats
