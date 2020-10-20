@@ -5,8 +5,13 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+import sakila.service.*;
+import sakila.vo.*;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
+	private StatsService statsService;
+	
 	// loginForm.jsp로 이동
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -16,9 +21,11 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+		statsService = new StatsService();
+		Stats stats = statsService.getStats();
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("stats", stats);
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 
 	// loginAction.jsp로 이동

@@ -22,8 +22,6 @@ public class Stats {
 	
 	@Override
 	public String toString() {
-		return "Stats [day=" + day + ", count=" + count + ", getDay()=" + getDay() + ", getCount()=" + getCount()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
-	}	
+		return "Stats [day=" + day + ", count=" + count + "]";
+	}
 }
