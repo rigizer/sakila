@@ -87,7 +87,19 @@
 					</td>
 					<td>
 						<div class="container">
-							${stats.count}
+							${todayStats.count}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%">
+						<div class="container">
+							Total
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							${totalCount}
 						</div>
 					</td>
 				</tr>

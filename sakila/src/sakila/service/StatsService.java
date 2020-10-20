@@ -25,11 +25,13 @@ public class StatsService {
 		return stats;
 	}
 	
-	public Stats getStats() {
+	public Map<String, Object> getStats() {
 		Stats returnStats = null;
 		
 		statsDao = new StatsDao();	// 메소드를 호출하기 위해 객체 생성		
 		Connection conn = null;	// Connection 객체 메소드 전역 선언
+		
+		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		try {
 			DBUtil dbUtil = new DBUtil();	// 데이터베이스 정보가 담긴 객체 생성
@@ -38,8 +40,17 @@ public class StatsService {
 			Stats stats = this.getToday();
 			System.out.println("Debug: this.getToday() 실행");
 			
-			returnStats = statsDao.selectDay(conn, stats);
+			// 트랜잭션 실행
+			Stats todayStats = statsDao.selectDay(conn, stats);
+			Stats totalStats = statsDao.selectTotalCount(conn);
+			
+			// 트랜잭션 성공 시  commit 수행
 			conn.commit();
+			
+			//returnStats = statsDao.selectDay(conn, stats);
+			
+			returnMap.put("todayStats", todayStats);
+			returnMap.put("totalCount", totalStats.getCount());
 		} catch(Exception e) {
 			try {
 				conn.rollback();
@@ -55,7 +66,7 @@ public class StatsService {
 			}	
 		}
 		
-		return returnStats;
+		return returnMap;
 	}
 	
 	public void countStats() {

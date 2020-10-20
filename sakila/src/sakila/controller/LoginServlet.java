@@ -1,6 +1,8 @@
 package sakila.controller;
 
 import java.io.IOException;
+import java.util.*;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -22,9 +24,12 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		statsService = new StatsService();
-		Stats stats = statsService.getStats();
+		//Stats stats = statsService.getStats();
+		Map<String, Object> map = statsService.getStats();
 		
-		request.setAttribute("stats", stats);
+		//request.setAttribute("stats", stats);
+		request.setAttribute("todayStats", map.get("todayStats"));
+		request.setAttribute("totalCount", map.get("totalCount"));
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 

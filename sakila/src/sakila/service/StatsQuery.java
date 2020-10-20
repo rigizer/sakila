@@ -9,4 +9,7 @@ public class StatsQuery {
 	
 	// 방문자 수를 수정하기 위한 쿼리 (동일 날짜에 +1을 하여 방문자수 수정)
 	public static final String UPDATE_STATS="update stats set cnt = cnt+1 where day = ?";
+	
+	// 전체 방문자 수를 출력하기 위한 쿼리
+	public static final String SELECT_TOTAL="select sum(cnt) from stats";
 }
