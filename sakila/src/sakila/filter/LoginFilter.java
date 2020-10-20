@@ -16,11 +16,11 @@ public class LoginFilter implements Filter {
 	}
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("LoginFilter 실행 : session 검사");
+		System.out.println("Debug: LoginFilter 실행 (session 검사)");
 		
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		if (session.getAttribute("loginStaff") == null) {	// 로그인이 되어있지 않은 경우 확인
-			System.out.println("로그인 후 접근하세요!");
+			System.out.println("Debug: 로그인 실패");
 			
 			((HttpServletResponse)response).sendRedirect(request.getServletContext().getContextPath() + "/LoginServlet");
 			return;

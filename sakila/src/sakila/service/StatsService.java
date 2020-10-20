@@ -13,7 +13,7 @@ public class StatsService {
 	public void countStats() {
 		statsDao = new StatsDao();	// 메소드를 호출하기 위해 객체 생성
 		
-		final String dbUrl = "rigizer.iptime.org/sakila";
+		final String dbUrl = "jdbc:mariadb://rigizer.iptime.org:8106/sakila";
 		final String dbId = "goodee";
 		final String dbPw = "java1004";
 		
