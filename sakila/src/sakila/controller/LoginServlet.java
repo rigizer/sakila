@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 		Map<String, Object> map = statsService.getStats();
 		
 		//request.setAttribute("stats", stats);
+		request.setAttribute("yesterdayStats", map.get("yesterdayStats"));
 		request.setAttribute("todayStats", map.get("todayStats"));
 		request.setAttribute("totalCount", map.get("totalCount"));
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);

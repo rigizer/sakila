@@ -82,6 +82,18 @@
 				<tr>
 					<td width="40%">
 						<div class="container">
+							Yesterday
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							${yesterdayStats.count}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%">
+						<div class="container">
 							Today
 						</div>
 					</td>

@@ -12,4 +12,7 @@ public class StatsQuery {
 	
 	// 전체 방문자 수를 출력하기 위한 쿼리
 	public static final String SELECT_TOTAL="select sum(cnt) from stats";
+	
+	// 어제의 방문자 수를 출력하기 위한 쿼리
+	public static final String SELECT_YESTERDAY="select * from stats where day = ?";
 }
