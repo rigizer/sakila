@@ -1,12 +1,12 @@
 package sakila.service;
 
 import java.util.*;
-import java.util.Date;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
 import sakila.dao.*;
 import sakila.vo.*;
+import sakila.commons.*;
 
 public class StatsService {	
 	private StatsDao statsDao;	// StatsDao 객체 선언
@@ -27,17 +27,13 @@ public class StatsService {
 	
 	public Stats getStats() {
 		Stats returnStats = null;
-		statsDao = new StatsDao();	// 메소드를 호출하기 위해 객체 생성
 		
-		final String dbUrl = "jdbc:mariadb://rigizer.iptime.org:8106/sakila";
-		final String dbId = "goodee";
-		final String dbPw = "java1004";
-		
+		statsDao = new StatsDao();	// 메소드를 호출하기 위해 객체 생성		
 		Connection conn = null;	// Connection 객체 메소드 전역 선언
 		
 		try {
-			conn = DriverManager.getConnection(dbUrl, dbId, dbPw);
-			conn.setAutoCommit(false);	// AutoCommit을 비활성화
+			DBUtil dbUtil = new DBUtil();	// 데이터베이스 정보가 담긴 객체 생성
+			conn = dbUtil.getConnection();	// 데이터베이스 접속
 			
 			Stats stats = this.getToday();
 			System.out.println("Debug: this.getToday() 실행");
@@ -73,16 +69,11 @@ public class StatsService {
 	
 	public void countStats() {
 		statsDao = new StatsDao();	// 메소드를 호출하기 위해 객체 생성
-		
-		final String dbUrl = "jdbc:mariadb://rigizer.iptime.org:8106/sakila";
-		final String dbId = "goodee";
-		final String dbPw = "java1004";
-		
 		Connection conn = null;	// Connection 객체 메소드 전역 선언
 		
 		try {
-			conn = DriverManager.getConnection(dbUrl, dbId, dbPw);
-			conn.setAutoCommit(false);	// AutoCommit을 비활성화
+			DBUtil dbUtil = new DBUtil();	// 데이터베이스 정보가 담긴 객체 생성
+			conn = dbUtil.getConnection(); // 데이터베이스 접속
 			
 			Stats stats = this.getToday();
 			
