@@ -2,6 +2,7 @@ package sakila.dao;
 
 import java.sql.*;
 
+import sakila.query.*;
 import sakila.service.*;
 import sakila.vo.*;
 

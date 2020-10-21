@@ -1,4 +1,4 @@
-package sakila.service;
+package sakila.query;
 
 public class StatsQuery {
 	// 오늘 날짜가 있는지 없는지 확인하기 위한 쿼리

@@ -27,14 +27,16 @@
 		<script>
 			$(document).ready(function() {	// 문서가 로드되면 이 스크립트를 제일 마지막에 실행해주세요
 				$("#btn").click(function() {	// 버튼 클릭시 폼 내용의 유효성 검사를 수행
-					if ($("#email").val().length < 1) {	// email이 1 이상이 아닌경우 수행
+					if ($("#email").val() == "") {	// email이 1 이상이 아닌경우 수행
 						alert("이메일을 입력해주세요");
 						return;
 					}
-					else if ($("#pw").val() < 1) {		// pw가 1 이상이 아닌경우 수행
+					else if ($("#pw").val() == "") {		// pw가 1 이상이 아닌경우 수행
 						alert("비밀번호를 입력해주세요");
 						return;
 					}
+				
+					alert("E-Mail : " + $("#email").val() + "/ PW : " + $("#pw").val())
 					$("#loginForm").submit();
 				});	
 			});
@@ -49,19 +51,19 @@
 				
 				<br>
 				
-				<form id="loginForm">
+				<form method="post" id="loginForm">
 					<table class="table table-striped" style="margin: auto; text-align: center; width: 50%;">
 						<tr>
 							<td>
 								<div class="container">
-									<input type="text" class="form-control" placeholder="E-mail" id="email">
+									<input type="text" class="form-control" name="email" placeholder="E-mail" id="email">
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<div class="container">
-									<input type="password" class="form-control" placeholder="PW" id="pw">
+									<input type="password" class="form-control" name="pw" placeholder="Password" id="pw">
 								</div>
 							</td>
 						</tr>

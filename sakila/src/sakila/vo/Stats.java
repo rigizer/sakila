@@ -1,8 +1,8 @@
 package sakila.vo;
 
 public class Stats {
-	private String day;
-	private long count;
+	private String day;		// 해당하는 날짜
+	private long count;		// 해당하는 날짜의 방문자 수
 	
 	public String getDay() {
 		return day;
