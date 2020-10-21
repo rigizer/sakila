@@ -51,7 +51,7 @@
 				
 				<br>
 				
-				<form method="post" id="loginForm">
+				<form method="post" action="<%=request.getContextPath() %>/LoginServlet" id="loginForm">
 					<table class="table table-striped" style="margin: auto; text-align: center; width: 50%;">
 						<tr>
 							<td>
