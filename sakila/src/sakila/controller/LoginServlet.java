@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Debug: 로그인 성공");
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("loginStaff", returnStaff.getStaffId());	// 세션에 로그인 성공한 staffId를 저장
+			session.setAttribute("loginStaff", returnStaff);	// 세션에 로그인 성공한 정보가 담긴 returnStaff를 저장
 			
 			response.sendRedirect(request.getContextPath() + "/auth/IndexServlet");
 			return;
