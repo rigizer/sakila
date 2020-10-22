@@ -14,7 +14,7 @@ public class IndexServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		System.out.println("Debug: loginStaffId(" +session.getAttribute("loginStaffId") + ")");
+		System.out.println("Debug: loginStaff(" +session.getAttribute("loginStaff") + ")");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
