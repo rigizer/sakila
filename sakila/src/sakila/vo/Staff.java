@@ -7,7 +7,7 @@ public class Staff {
 	private String firstName;	// staff의 이름
 	private String lastName;	// staff의 성
 	private int addressId;		// staff의 주소 고유번호
-	private Blob picture;		// staff의 이미지 (BLOB)
+	private String picture;		// staff의 이미지
 	private String email;		// staff의 E-Mail
 	private int storeId;		// staff가 속한 store의 고유번호
 	private int active;			// staff의 계정 활성여부
@@ -47,11 +47,11 @@ public class Staff {
 		this.addressId = addressId;
 	}
 
-	public Blob getPicture() {
+	public String getPicture() {
 		return picture;
 	}
 
-	public void setPicture(Blob picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
