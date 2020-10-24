@@ -14,7 +14,7 @@ public class StaffDao {
 		Staff returnStaff = null;		
 		
 		PreparedStatement stmt = conn.prepareStatement(StaffQuery.SELECT_STAFF_BY_KEY);
-		stmt.setShort(1, staff.getStaffId());
+		stmt.setString(1, staff.getEmail());
 		stmt.setString(2, staff.getPassword());
 		
 		ResultSet rs = stmt.executeQuery();		// conn 접속정보를 가진 SELECT_STAFF_BY_KEY 쿼리를 실행. 이후 결과를 rs에 저장.
@@ -23,7 +23,11 @@ public class StaffDao {
 		if (rs.next()) {
 			returnStaff = new Staff();
 			returnStaff.setStaffId(rs.getShort("staff_id"));
-			System.out.println("Debug: staffId("+ rs.getString("staff_id") +")");
+			System.out.println("Debug: staffId("+ rs.getShort("staff_id") +")");
+			returnStaff.setStoreId(rs.getInt("store_id"));
+			System.out.println("Debug: storeId("+ rs.getInt("store_id") +")");
+			returnStaff.setEmail(rs.getString("email"));
+			System.out.println("Debug: staffEmail("+ rs.getString("email") +")");
 			returnStaff.setUsername(rs.getString("username"));
 			System.out.println("Debug: username("+ rs.getString("username") +")");
 		}

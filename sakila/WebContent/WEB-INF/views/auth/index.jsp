@@ -10,7 +10,8 @@
 		<h1>index.jsp</h1>
 		
 		<div>
-			<span>${loginStaff.username}</span>관리자님, 환영합니다!
+			<span>${loginStaff.storeId}</span> 지점 
+			<span>${loginStaff.email}</span>(<span>${loginStaff.username}</span>) 관리자님, 환영합니다!
 		</div>
 		
 		<div>

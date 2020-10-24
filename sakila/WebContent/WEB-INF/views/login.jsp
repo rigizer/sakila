@@ -27,8 +27,8 @@
 		<script>
 			$(document).ready(function() {	// 문서가 로드되면 이 스크립트를 제일 마지막에 실행해주세요
 				$("#btn").click(function() {	// 버튼 클릭시 폼 내용의 유효성 검사를 수행
-					if ($("#id").val() == "") {	// id가 공백인 경우 수행
-						alert("아이디를 입력해주세요");
+					if ($("#email").val() == "") {	// email이 공백인 경우 수행
+						alert("E-Mail을 입력해주세요");
 						return;
 					}
 					else if ($("#pw").val() == "") { // pw가 공백인 경우 수행
@@ -54,7 +54,7 @@
 						<tr>
 							<td>
 								<div class="container">
-									<input type="text" class="form-control" name="id" placeholder="Staff ID" id="id">
+									<input type="text" class="form-control" name="email" placeholder="Staff Email" id="email">
 								</div>
 							</td>
 						</tr>
