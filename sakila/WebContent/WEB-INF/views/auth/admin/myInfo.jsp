@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>index.jsp</title>
+		<title>myInfo.jsp</title>
 		
 		<!-- Bootstrap Framework 사용 -->
 		
@@ -34,35 +34,47 @@
 					<jsp:include page="/include/menu.jsp"></jsp:include>
 				</aside>
 				<main>
-		
-					<h1>Index</h1>
-		
-					<hr>
+					<table width="100%" style="margin-top: 8px;">
+						<tr>
+							<td>
+								<h2>관리자 정보</h2>
+							</td>
+							<td width="15%">
+								<button type="button" class="btn btn-primary btn-sm btn-block" style="float: right;" onclick="location.href='${pageContext.request.contextPath}/auth/MyInfoUpdateServlet'">정보 수정</button>
+							</td>
+						</tr>
+					</table>
 					
-					<div>
-						Sakila 프로젝트 설명
-						
-						<br><br>
-						
-						<table class="table table-striped" width="100%" style="text-align: center;">
-							<tr>
-								<td width="30%">작업기간</td>
-								<td width="70%">2020.10.00 ~ 2020.11.00</td>
-							</tr>
-							<tr>
-								<td>제작자</td>
-								<td>한재용(<a href="mailto:maru_i@kakao.com">maru_i@kakao.com</a>)</td>
-							</tr>
-							<tr>
-								<td>dd</td>
-								<td>dd</td>
-							</tr>
-							<tr>
-								<td>dd</td>
-								<td>dd</td>
-							</tr>
-						</table>
-					</div>
+					<hr style="margin-top: 8px;">
+					
+					<table class="adminInfo-table" width="100%" style="text-align: left;">
+						<tr>
+							<td width="15%">별명</td>
+							<td width="45%">${staffInfo.username}</td>
+							<td width="5%"rowspan="6">&nbsp;</td>
+							<td width="45%" rowspan="6" bgcolor="#E2E2E2" style="text-align: center;">(사진)</td>
+						</tr>
+						<tr>
+							<td>이름</td>
+							<td>${staffInfo.firstName} ${staffInfo.lastName}</td>
+						</tr>
+						<tr>
+							<td>연락처</td>
+							<td>${staffInfo.phone}</td>
+						</tr>
+						<tr>
+							<td>주소</td>
+							<td>${staffInfo.city}, ${staffInfo.country}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>${staffInfo.address}</td>
+						</tr>
+						<tr>
+							<td>E-mail</td>
+							<td>${staffInfo.email}</td>
+						</tr>
+					</table>
 				</main>
 			</div>
 		</section>

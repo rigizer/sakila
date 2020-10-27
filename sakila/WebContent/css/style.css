@@ -21,6 +21,14 @@ main {
 	padding: 20px 10px 20px 10px;
 	background: #E0E0E0;
 }
+
+hr {
+	border: solid 1px gray;
+}
+
+.adminInfo-table td {
+	padding: 5px;
+}
 			
 @media only screen and (min-width: 768px) {
 	section .container {
