@@ -23,123 +23,15 @@
 		<!-- Bootstrap 4 Icons -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 		
-		<style>
-			body {
-				margin: 0;
-			}
-			
-			.container {
-				margin: 0 auto 0 auto;
-				max-width: 1000px;
-			}
-			
-			section .container {
-				display: flex;
-				flex-flow: column;
-			}
-			
-			main {
-				padding: 20px 10px 20px 10px;
-				max-width: 760px;
-			}
-			
-			.sidebar {
-				padding: 20px 10px 20px 10px;
-				background: #E0E0E0;
-			}
-						
-			@media only screen and (min-width: 768px) {
-				section .container {
-					flex-flow: row;
-				}
-				.sidebar {
-					flex: 0 1 240px;
-					min-width: 240px;
-					min-height: 960px;
-				}
-				main {
-					flex: 1 0 auto;
-					padding-left: 30px;
-				}
-			}
-		</style>
+		<!-- Sakila CSS -->
+		<link rel="stylesheet" type="text/css" href="/sakila/css/style.css" />
 	</head>
 	<body>
 		<section>
 			<div class="container">
 				<aside class="sidebar">
-					<div style="padding-left: 10px; padding-right: 10px;">
-						<div style="margin: auto; text-align: center;">
-							<h3>Sakila Movie</h3>
-						</div>
-						
-						<br>
-						
-						<div style="margin: auto;">
-							<table style="width: 100%; margin: auto; text-align: right;">
-								<tr>
-									<td rowspan="2" style="text-align: left;">
-										<i class="fas fa-user-circle fa-3x"></i>
-									</td>
-									<td>
-										<span>${loginStaff.storeId}</span> 지점
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span>${loginStaff.username}</span> 관리자님
-									</td>
-								</tr>
-							</table>
-						</div>
-						
-						<div style="margin-top: 10px; margin-bottom: 100px;">
-							<button type="button" class="btn btn-dark btn-sm btn-block" onclick="location.href='${pageContext.request.contextPath}/auth/LogoutServlet'">Log-out</button>
-						</div>
-					
-						<div style="margin-bottom: 20px;">
-							<h4>Menu</h4>
-						</div>
-						
-						<table width="100%">
-							<tr>
-								<td>홈</td>
-							</tr>
-							<tr>
-								<td><hr width="100%" /></td>
-							</tr>
-							<tr>
-								<td>영화반납</td>
-							</tr>
-							<tr>
-								<td><hr width="100%" /></td>
-							</tr>
-							<tr>
-								<td>회원목록 관리</td>
-							</tr>
-							<tr>
-								<td>영화목록 관리</td>
-							</tr>
-							<tr>
-								<td>영화재고 관리</td>
-							</tr>
-							<tr>
-								<td>영화배우 관리</td>
-							</tr>
-							<tr>
-								<td>영화 출연배우 등록</td>
-							</tr>
-							<tr>
-								<td><hr width="100%" /></td>
-							</tr>
-							<tr>
-								<td>매장통계</td>
-							</tr>
-							<tr>
-								<td>MVP</td>
-							</tr>
-						</table>
-					</div>
+					<!-- menu 항목을 include한다 -->
+					<jsp:include page="/include/menu.jsp"></jsp:include>
 				</aside>
 				<main>
 					<h1>Index</h1>
