@@ -32,7 +32,7 @@ public class MyInfoServlet extends HttpServlet {
 		System.out.println("Debug: returnStaffInfo(" + returnStaffInfo + ")");
 		
 		if (returnStaffInfo != null) {	// staff.email와 staff.password가 모두 일치하는 데이터가 존재할 경우
-			session.setAttribute("staffInfo", returnStaffInfo);	// 세션에 staffInfo 데이터를 담음
+			request.setAttribute("staffInfo", returnStaffInfo);	// request에 staffInfo 데이터를 담음
 		}
 		
 		request.getRequestDispatcher("/WEB-INF/views/auth/admin/myInfo.jsp").forward(request, response);
