@@ -47,7 +47,7 @@
 					
 					<hr style="margin-top: 8px;">
 					
-					<table>
+					<table class="table table-hover" style="text-align: center">
 						<thead>
 							<th>번호</th>
 							<th>이름</th>
@@ -56,7 +56,7 @@
 							<th>연체여부</th>
 						</thead>
 						<tbody>
-							<c:forEach var="b" items="${list}">
+							<c:forEach var="b" items="${customerList}">
 								<tr>
 									<td>${b.customerId}</td>
 									<td>${b.name}</td>
