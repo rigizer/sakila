@@ -23,8 +23,8 @@ public class CustomerListDao {
 		
 		while(rs.next()) {
 			CustomerList customerList = new CustomerList();
-			customerList.setCustomer_id(rs.getInt("ID"));
-			System.out.println("Debug: customer_id("+ rs.getInt("ID") +")");
+			customerList.setCustomerId(rs.getInt("ID"));
+			System.out.println("Debug: customerId("+ rs.getInt("ID") +")");
 			customerList.setName(rs.getString("name"));
 			System.out.println("Debug: name("+ rs.getString("name") +")");
 			customerList.setPhone(rs.getString("phone"));

@@ -47,7 +47,26 @@
 					
 					<hr style="margin-top: 8px;">
 					
-					회원목록이 이곳에 출력됩니다.
+					<table>
+						<thead>
+							<th>번호</th>
+							<th>이름</th>
+							<th>연락처</th>
+							<th>활성여부</th>
+							<th>연체여부</th>
+						</thead>
+						<tbody>
+							<c:forEach var="b" items="${list}">
+								<tr>
+									<td>${b.customerId}</td>
+									<td>${b.name}</td>
+									<td>${b.phone}</td>
+									<td>${b.notes}</td>
+									<td>${b.overdue}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</main>
 			</div>
 		</section>
