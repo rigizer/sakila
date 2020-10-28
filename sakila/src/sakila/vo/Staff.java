@@ -1,7 +1,5 @@
 package sakila.vo;
 
-import java.sql.*;
-
 public class Staff {
 	private short staffId;		// staff의 고유번호
 	private String firstName;	// staff의 이름
