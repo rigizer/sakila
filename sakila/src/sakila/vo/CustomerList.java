@@ -49,7 +49,7 @@ public class CustomerList {
 
 	@Override
 	public String toString() {
-		return "CustomerList [customer_id=" + customerId + ", name=" + name + ", phone=" + phone + ", notes=" + notes
+		return "CustomerList [customerId=" + customerId + ", name=" + name + ", phone=" + phone + ", notes=" + notes
 				+ ", overdue=" + overdue + "]";
 	}
 }
