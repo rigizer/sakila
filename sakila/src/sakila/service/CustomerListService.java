@@ -10,7 +10,7 @@ import sakila.commons.*;
 public class CustomerListService {
 	private CustomerListDao customerListDao;	// CustomerListDao 객체 선언
 	
-	public ArrayList<CustomerList> getCustomerList(int currentPage, int pagePerRow) {
+	public ArrayList<CustomerList> getCustomerList(int limit1, int limit2) {
 		ArrayList<CustomerList> returnList = null;
 		
 		customerListDao = new CustomerListDao();	// 메소드를 호출하기 위해 객체 생성
@@ -21,7 +21,7 @@ public class CustomerListService {
 			conn = dbUtil.getConnection();	// 데이터베이스 접속
 			
 			// 트랜잭션 실행
-			returnList = customerListDao.selectCustomerList(conn, currentPage, pagePerRow);
+			returnList = customerListDao.selectCustomerList(conn, limit1, limit2);
 			
 			// 트랜잭션 성공 시  commit 수행
 			conn.commit();
@@ -44,6 +44,7 @@ public class CustomerListService {
 	}
 	
 	public int countCustomerList() {
+		System.out.println("Debug: [SERVICE] countCustomerList 실행");
 		int count = 0;
 		
 		customerListDao = new CustomerListDao();	// 메소드를 호출하기 위해 객체 생성

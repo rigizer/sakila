@@ -67,6 +67,19 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					
+					<br>
+					
+					<!-- 총 페이지 수 출력 -->
+					<table style="margin: auto;">
+						<tr>
+							<td>
+								<button type="button" class="btn btn-outline-dark btn-sm">
+									${currentPage} / ${lastPage} 페이지
+								</button>
+							</td>
+						</tr>
+					</table>
 				</main>
 			</div>
 		</section>

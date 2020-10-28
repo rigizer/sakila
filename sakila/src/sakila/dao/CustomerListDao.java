@@ -9,14 +9,14 @@ import sakila.vo.*;
 
 public class CustomerListDao {
 	// 회원 목록 출력
-	public ArrayList<CustomerList> selectCustomerList(Connection conn, int currentPage, int pagePerRow) throws Exception {
+	public ArrayList<CustomerList> selectCustomerList(Connection conn, int limit1, int limit2) throws Exception {
 		System.out.println("Debug: selectCustomerList 실행");
 		
 		ArrayList<CustomerList> list = new ArrayList<CustomerList>();
 		
 		PreparedStatement stmt = conn.prepareStatement(CustomerListQuery.SELECT_CUSTOMER_LIST);
-		stmt.setInt(1, currentPage);
-		stmt.setInt(2, pagePerRow);
+		stmt.setInt(1, limit1);	// 페이지에 표시할 데이터의 첫 번째 인자
+		stmt.setInt(2, limit2);	// 페이지당 표시할 데이터 수
 		
 		ResultSet rs = stmt.executeQuery();		// conn 접속정보를 가진 SELECT_CUSTOMER_LIST 쿼리를 실행. 이후 결과를 rs에 저장.
 		System.out.println("Debug: rs(" + rs + ")");
