@@ -67,7 +67,7 @@
 											<button type="button" class="btn btn-danger btn-sm">${b.overdue}</button>
 										</c:if>
 										<c:if test="${b.overdue == 'N'}">
-											<button type="button" class="btn btn-info btn-sm">${b.overdue}</button>
+											<button type="button" class="btn btn-outline-danger btn-sm">${b.overdue}</button>
 										</c:if>
 									</td>
 								</tr>
