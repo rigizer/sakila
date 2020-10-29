@@ -62,6 +62,10 @@ public class CustomerListServlet extends HttpServlet {
 		request.setAttribute("currentPage", currentPage);			// request에 currentPage 데이터를 담음
 		request.setAttribute("lastPage", lastPage);					// request에 lastPage 데이터를 담음
 		
+		request.setAttribute("navPerPage", navPerPage);				// request에 navPerPage 데이터를 담음
+		request.setAttribute("navFirstPage", navFirstPage);			// request에 navFirstPage 데이터를 담음
+		request.setAttribute("navLastPage", navLastPage);			// request에 navLastPage 데이터를 담음
+		
 		request.getRequestDispatcher("/WEB-INF/views/auth/customer/customerList.jsp").forward(request, response);
 	}
 
