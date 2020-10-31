@@ -17,6 +17,10 @@ public class Film {
 	private String category;
 	private String actors;
 	
+	private int filmTotalAmount;	// 영화 총 재고수
+	private int filmStockAmount;	// 영화 현재 재고 수
+	private int filmRentalAmount;	// 영화 대여 수
+	
 	public int getFilmId() {
 		return filmId;
 	}
@@ -101,13 +105,62 @@ public class Film {
 	public void setActors(String actors) {
 		this.actors = actors;
 	}
-	
+	public int getFilmTotalAmount() {
+		return filmTotalAmount;
+	}
+	public void setFilmTotalAmount(int filmTotalAmount) {
+		this.filmTotalAmount = filmTotalAmount;
+	}
+	public int getFilmStockAmount() {
+		return filmStockAmount;
+	}
+	public void setFilmStockAmount(int filmStockAmount) {
+		this.filmStockAmount = filmStockAmount;
+	}
+	public int getFilmRentalAmount() {
+		return filmRentalAmount;
+	}
+	public void setFilmRentalAmount(int filmRentalAmount) {
+		this.filmRentalAmount = filmRentalAmount;
+	}
 	@Override
 	public String toString() {
-		return "Film [filmId=" + filmId + ", title=" + title + ", description=" + description + ", releaseYear="
-				+ releaseYear + ", language=" + language + ", originalLanguage=" + originalLanguage
-				+ ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate + ", length=" + length
-				+ ", replacementCost=" + replacementCost + ", rating=" + rating + ", lastUpdate=" + lastUpdate
-				+ ", category=" + category + ", actors=" + actors + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Film [filmId=");
+		builder.append(filmId);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", releaseYear=");
+		builder.append(releaseYear);
+		builder.append(", language=");
+		builder.append(language);
+		builder.append(", originalLanguage=");
+		builder.append(originalLanguage);
+		builder.append(", rentalDuration=");
+		builder.append(rentalDuration);
+		builder.append(", rentalRate=");
+		builder.append(rentalRate);
+		builder.append(", length=");
+		builder.append(length);
+		builder.append(", replacementCost=");
+		builder.append(replacementCost);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append(", lastUpdate=");
+		builder.append(lastUpdate);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", actors=");
+		builder.append(actors);
+		builder.append(", filmTotalAmount=");
+		builder.append(filmTotalAmount);
+		builder.append(", filmStockAmount=");
+		builder.append(filmStockAmount);
+		builder.append(", filmRentalAmount=");
+		builder.append(filmRentalAmount);
+		builder.append("]");
+		return builder.toString();
 	}
 }

@@ -10,15 +10,15 @@ import javax.servlet.http.*;
 import sakila.service.*;
 import sakila.vo.*;
 
-@WebServlet("/auth/FilmListServlet")
-public class FilmListServlet extends HttpServlet {
-	private FilmListService filmListService;
+@WebServlet("/auth/FilmStockListServlet")
+public class FilmStockListServlet extends HttpServlet {
+	private FilmStockListService filmStockListService;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Debug: FilmListServlet doGet 실행");
+		System.out.println("Debug: FilmStockListServlet doGet 실행");
 		
-		filmListService = new FilmListService();
-		System.out.println("Debug: FilmList 객체 생성");
+		filmStockListService = new FilmStockListService();
+		System.out.println("Debug: filmStockList 객체 생성");
 		
 		// 현재 페이지
 		int currentPage = 1;
@@ -32,7 +32,7 @@ public class FilmListServlet extends HttpServlet {
 		
 		// 전체 데이터 수
 		int totalCount = 0;
-		totalCount = filmListService.countFilmList();	// 전체 데이터 개수
+		totalCount = filmStockListService.countFilmStockList();	// 전체 데이터 개수
 		System.out.println("Debug: totalCount(" + totalCount + ")");
 		
 		// 마지막 페이지
@@ -54,10 +54,10 @@ public class FilmListServlet extends HttpServlet {
 			navLastPage = navLastPage - navPerPage;
 		}
 		
-		ArrayList<Film> returnFilmList = filmListService.getFilmList((currentPage - 1) * rowPerPage, rowPerPage);	// 영화 목록을 불러온다.
-		System.out.println("Debug: returnFilmList(" + returnFilmList + ")");
+		ArrayList<Film> returnFilmStockList = filmStockListService.getFilmStockList((currentPage - 1) * rowPerPage, rowPerPage);	// 영화 재고 목록을 불러온다.
+		System.out.println("Debug: returnFilmStockList(" + returnFilmStockList + ")");
 		
-		request.setAttribute("filmList", returnFilmList);	// request에 filmList 데이터를 담음
+		request.setAttribute("filmStockList", returnFilmStockList);	// request에 filmStockList 데이터를 담음
 		
 		request.setAttribute("currentPage", currentPage);			// request에 currentPage 데이터를 담음
 		request.setAttribute("lastPage", lastPage);					// request에 lastPage 데이터를 담음
@@ -66,7 +66,7 @@ public class FilmListServlet extends HttpServlet {
 		request.setAttribute("navFirstPage", navFirstPage);			// request에 navFirstPage 데이터를 담음
 		request.setAttribute("navLastPage", navLastPage);			// request에 navLastPage 데이터를 담음
 		
-		request.getRequestDispatcher("/WEB-INF/views/auth/film/filmList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/auth/filmStock/filmStockList.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -64,7 +64,9 @@
 			</td>
 		</tr>
 		<tr>
-			<td>영화재고 관리</td>
+			<td>
+				<a style="color: black;" href="${pageContext.request.contextPath}/auth/FilmStockListServlet">영화재고 관리</a>
+			</td>
 		</tr>
 		<tr>
 			<td>영화배우 관리</td>
