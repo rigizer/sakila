@@ -9,10 +9,10 @@ import sakila.vo.*;
 
 public class CustomerListDao {
 	// 회원 목록 출력
-	public ArrayList<CustomerList> selectCustomerList(Connection conn, int limit1, int limit2) throws Exception {
+	public ArrayList<Customer> selectCustomerList(Connection conn, int limit1, int limit2) throws Exception {
 		System.out.println("Debug: selectCustomerList 실행");
 		
-		ArrayList<CustomerList> list = new ArrayList<CustomerList>();
+		ArrayList<Customer> list = new ArrayList<Customer>();
 		
 		PreparedStatement stmt = conn.prepareStatement(CustomerListQuery.SELECT_CUSTOMER_LIST);
 		stmt.setInt(1, limit1);	// 페이지에 표시할 데이터의 첫 번째 인자
@@ -22,7 +22,7 @@ public class CustomerListDao {
 		System.out.println("Debug: rs(" + rs + ")");
 		
 		while(rs.next()) {
-			CustomerList customerList = new CustomerList();
+			Customer customerList = new Customer();
 			customerList.setCustomerId(rs.getInt("ID"));
 			System.out.println("Debug: customerId("+ rs.getInt("ID") +")");
 			customerList.setName(rs.getString("name"));

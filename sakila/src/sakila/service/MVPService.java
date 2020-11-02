@@ -7,13 +7,13 @@ import sakila.dao.*;
 import sakila.vo.*;
 import sakila.commons.*;
 
-public class CustomerListService {
-	private CustomerListDao customerListDao;	// CustomerListDao 객체 선언
+public class MVPService {
+	private MVPDao mvpDao;	// MVPDao 객체 선언
 	
-	public ArrayList<Customer> getCustomerList(int limit1, int limit2) {
+	public ArrayList<Customer> getMVP(int limit1, int limit2) {
 		ArrayList<Customer> returnList = null;
 		
-		customerListDao = new CustomerListDao();	// 메소드를 호출하기 위해 객체 생성
+		mvpDao = new MVPDao();	// 메소드를 호출하기 위해 객체 생성
 		Connection conn = null;	// Connection 객체 메소드 전역 선언
 		
 		try {
@@ -21,7 +21,7 @@ public class CustomerListService {
 			conn = dbUtil.getConnection();	// 데이터베이스 접속
 			
 			// 트랜잭션 실행
-			returnList = customerListDao.selectCustomerList(conn, limit1, limit2);
+			returnList = mvpDao.selectMVP(conn, limit1, limit2);
 			
 			// 트랜잭션 성공 시  commit 수행
 			conn.commit();
@@ -43,11 +43,11 @@ public class CustomerListService {
 		return returnList;
 	}
 	
-	public int countCustomerList() {
-		System.out.println("Debug: [SERVICE] countCustomerList 실행");
+	public int countMVP() {
+		System.out.println("Debug: [SERVICE] countMVP 실행");
 		int count = 0;
 		
-		customerListDao = new CustomerListDao();	// 메소드를 호출하기 위해 객체 생성
+		mvpDao = new MVPDao();	// 메소드를 호출하기 위해 객체 생성
 		Connection conn = null;	// Connection 객체 메소드 전역 선언
 		
 		try {
@@ -55,7 +55,7 @@ public class CustomerListService {
 			conn = dbUtil.getConnection();	// 데이터베이스 접속
 			
 			// 트랜잭션 실행
-			count = customerListDao.countCustomerList(conn);
+			count = mvpDao.countMVP(conn);
 			
 			// 트랜잭션 성공 시  commit 수행
 			conn.commit();

@@ -81,7 +81,9 @@
 			<td>매장통계</td>
 		</tr>
 		<tr>
-			<td>MVP</td>
+			<td>
+				<a style="color: black;" href="${pageContext.request.contextPath}/auth/MVPServlet">MVP</a>
+			</td>
 		</tr>
 	</table>
 </div>

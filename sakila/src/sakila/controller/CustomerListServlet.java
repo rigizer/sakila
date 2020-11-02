@@ -54,7 +54,7 @@ public class CustomerListServlet extends HttpServlet {
 			navLastPage = navLastPage - navPerPage;
 		}
 		
-		ArrayList<CustomerList> returnCustomerList = customerListService.getCustomerList((currentPage - 1) * rowPerPage, rowPerPage);	// 회원 목록을 불러온다.
+		ArrayList<Customer> returnCustomerList = customerListService.getCustomerList((currentPage - 1) * rowPerPage, rowPerPage);	// 회원 목록을 불러온다.
 		System.out.println("Debug: returnCustomerList(" + returnCustomerList + ")");
 		
 		request.setAttribute("customerList", returnCustomerList);	// request에 customerList 데이터를 담음
