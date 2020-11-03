@@ -78,7 +78,9 @@
 			<td><hr></td>
 		</tr>
 		<tr>
-			<td>매장통계</td>
+			<td>
+				<a style="color: black;" href="${pageContext.request.contextPath}/auth/FilmStoreStatServlet">매장 통계</a>
+			</td>
 		</tr>
 		<tr>
 			<td>
