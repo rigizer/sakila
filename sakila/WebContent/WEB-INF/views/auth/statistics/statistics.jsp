@@ -25,6 +25,12 @@
 		
 		<!-- Sakila CSS -->
 		<link rel="stylesheet" type="text/css" href="/sakila/css/style.css" />
+		
+		<style>
+			.statTable td {
+				width: 50%;
+			}
+		</style>
 	</head>
 	<body>
 		<section>
@@ -47,11 +53,40 @@
 					
 					<hr style="margin-top: 8px;">
 					
-					<h4>카테고리별 매출액</h4>
+					<!-- 매장 총 매출 -->
+					<h5>매장 총 매출</h5>
 					
 					<br>
 					
-					<table class="table table-hover" style="text-align: center">
+					<table class="statTable">
+						<tr>
+							<td><input type="text" class="form-control" value="${salesByStore.totalSales}" readonly="readonly"></td>
+							<td>&nbsp;원</td>
+						</tr>
+					</table>
+					
+					<br><br>
+					
+					<!-- 총 대여 수 -->
+					<h5>총 대여 수</h5>
+					
+					<br>
+					
+					<table class="statTable">
+						<tr>
+							<td><input type="text" class="form-control" value="00" readonly="readonly"></td>
+							<td>&nbsp;건</td>
+						</tr>
+					</table>
+					
+					<br><br>
+					
+					<!-- 카테고리별 매출액 -->
+					<h5>카테고리별 매출액</h5>
+					
+					<br>
+					
+					<table class="table table-hover statTable" style="text-align: center">
 						<thead>
 							<th>카테고리</th>
 							<th>매출액</th>

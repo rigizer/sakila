@@ -2,6 +2,7 @@ package sakila.controller;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +21,13 @@ public class FilmStoreStatServlet extends HttpServlet {
 		filmStoreStatService = new FilmStoreStatService();
 		System.out.println("Debug: filmStoreStatService 객체 생성");
 		
+		FilmStoreStat filmStoreStat = filmStoreStatService.getStoreStat();	// 매장별 매출내역을 불러온다
+		System.out.println("Debug: filmStoreStat(" + filmStoreStat + ")");
+		
 		ArrayList<FilmStoreStat> returnFilmStoreStat = filmStoreStatService.getFilmStoreStat();	// 카테고리별 매출내역을 불러온다
 		System.out.println("Debug: returnFilmStoreStat(" + returnFilmStoreStat + ")");
 		
+		request.setAttribute("salesByStore", filmStoreStat);	// request에 SalesByStore 데이터를 담음
 		request.setAttribute("filmStoreStat", returnFilmStoreStat);	// request에 filmStockList 데이터를 담음
 		
 		request.getRequestDispatcher("/WEB-INF/views/auth/statistics/statistics.jsp").forward(request, response);
