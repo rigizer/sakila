@@ -26,19 +26,53 @@
 		<!-- jQuery를 이용하여 로그인 E-mail/PW 검사 -->
 		<script>
 			$(document).ready(function() {	// 문서가 로드되면 이 스크립트를 제일 마지막에 실행해주세요
+				$('#email').focus();	// 시작 시 폼 커서를 email쪽으로 이동
+				
+				$('#email').blur(function() {	// email에 커서가 있지 않은 경우 확인
+					if($('#email').val() == '') {
+						$("#emailMsg").html('');	// 메시지 초기화
+						$('#emailMsg').append('<div style="margin-top: 10px;">이메일을 입력하세요<div>');
+						$('#email').focus();
+					} else {
+						$("#emailMsg").html('');	// 메시지 초기화
+					}
+				});
+				
+				$('#pw').blur(function() {	// pw에 커서가 있지 않은 경우 확인
+					if($('#pw').val() == '') {
+						$("#pwMsg").html('');	// 메시지 초기화
+						$('#pwMsg').append('<div style="margin-top: 10px;">비밀번호를 입력하세요<div>');
+						$('#pw').focus();
+					} else {
+						$('#pwMsg').html('');		// 메시지 초기화
+					}
+				});
+				
 				$("#btn").click(function() {	// 버튼 클릭시 폼 내용의 유효성 검사를 수행
 					if ($("#email").val() == "") {	// email이 공백인 경우 수행
-						alert("E-Mail을 입력해주세요");
+						$("#emailMsg").html('');	// 메시지 초기화
+						$('#emailMsg').append('<div style="margin-top: 10px;">이메일을 입력하세요<div>');
+						$('#email').focus();
+					
 						return;
 					}
 					else if ($("#pw").val() == "") { // pw가 공백인 경우 수행
-						alert("비밀번호를 입력해주세요");
+						$("#pwMsg").html('');	// 메시지 초기화
+						$('#pwMsg').append('<div style="margin-top: 10px;">비밀번호를 입력하세요<div>');
+						$('#pw').focus();
+					
 						return;
 					}
 					$("#loginForm").submit();
-				});	
+				});
 			});
 		</script>
+		
+		<style>
+			.msgDiv {
+				color: #FF0000;
+			}
+		</style>
 	</head>
 	<body>
 		<br><br><br><br><br><br>
@@ -55,6 +89,7 @@
 							<td>
 								<div class="container">
 									<input type="text" class="form-control" name="email" placeholder="Staff Email" id="email">
+									<div class="msgDiv" id="emailMsg"></div>
 								</div>
 							</td>
 						</tr>
@@ -62,6 +97,7 @@
 							<td>
 								<div class="container">
 									<input type="password" class="form-control" name="pw" placeholder="Password" id="pw">
+									<div class="msgDiv" id="pwMsg"></div>
 								</div>
 							</td>
 						</tr>
@@ -69,6 +105,13 @@
 							<td>
 								<div class="container">
 									<button type="button" class="btn btn-primary btn-block" id="btn">Log-in</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="container">
+									<button type="button" class="btn btn-danger btn-block" id="testBtn" onclick="location.href='${pageContext.request.contextPath}/LoginServlet?test=true'">Test Log-in</button>
 								</div>
 							</td>
 						</tr>
