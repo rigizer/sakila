@@ -47,7 +47,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a style="color: black;" href="${pageContext.request.contextPath}/auth/ReturnListServlet">영화 반납</a>
+				<a style="color: black;" href="${pageContext.request.contextPath}/auth/ReturnListServlet"><del>영화 반납</del></a>
 			</td>
 		</tr>
 		<tr>
@@ -69,10 +69,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td>영화배우 관리</td>
+			<td><del>영화배우 관리</del></td>
 		</tr>
 		<tr>
-			<td>영화 출연배우 등록</td>
+			<td><del>영화 출연배우 등록</del></td>
 		</tr>
 		<tr>
 			<td><hr></td>

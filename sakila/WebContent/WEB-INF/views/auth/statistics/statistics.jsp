@@ -56,8 +56,6 @@
 					<!-- 매장 총 매출 -->
 					<h5>매장 총 매출</h5>
 					
-					<br>
-					
 					<table class="statTable">
 						<tr>
 							<td><input type="text" class="form-control" value="${salesByStore.totalSales}" readonly="readonly"></td>
@@ -70,8 +68,6 @@
 					<!-- 총 대여 수 -->
 					<h5>총 대여 수</h5>
 					
-					<br>
-					
 					<table class="statTable">
 						<tr>
 							<td><input type="text" class="form-control" value="00" readonly="readonly"></td>
@@ -83,8 +79,6 @@
 					
 					<!-- 카테고리별 매출액 -->
 					<h5>카테고리별 매출액</h5>
-					
-					<br>
 					
 					<table class="table table-hover statTable" style="text-align: center">
 						<thead>
