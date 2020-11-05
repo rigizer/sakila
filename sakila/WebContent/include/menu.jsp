@@ -69,7 +69,9 @@
 			</td>
 		</tr>
 		<tr>
-			<td><del>영화배우 관리</del></td>
+			<td>
+				<a style="color: black;" href="${pageContext.request.contextPath}/auth/ActorListServlet">영화배우 관리</a>
+			</td>
 		</tr>
 		<tr>
 			<td><del>영화 출연배우 등록</del></td>

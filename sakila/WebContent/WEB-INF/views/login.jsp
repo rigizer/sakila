@@ -79,7 +79,7 @@
 	
 		<div class="container">
 			<div class="align-self-center">
-				<h1 class="text-center login-title">Sakila DVD Log-in</h1>
+				<h1 class="text-center login-title">Sakila Movie Log-in</h1>
 				
 				<br>
 				

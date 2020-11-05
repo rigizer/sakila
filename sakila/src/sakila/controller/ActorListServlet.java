@@ -1,24 +1,24 @@
 package sakila.controller;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import sakila.service.*;
 import sakila.vo.*;
 
-@WebServlet("/auth/FilmListServlet")
-public class FilmListServlet extends HttpServlet {
-	private FilmListService filmListService;
+@WebServlet("/auth/ActorListServlet")
+public class ActorListServlet extends HttpServlet {
+	private ActorListService actorListService;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Debug: FilmListServlet doGet 실행");
+		System.out.println("Debug: ActorListServlet doGet 실행");
 		
-		filmListService = new FilmListService();
-		System.out.println("Debug: FilmList 객체 생성");
+		actorListService = new ActorListService();
+		System.out.println("Debug: ActorList 객체 생성");
 		
 		// 현재 페이지
 		int currentPage = 1;
@@ -32,7 +32,7 @@ public class FilmListServlet extends HttpServlet {
 		
 		// 전체 데이터 수
 		int totalCount = 0;
-		totalCount = filmListService.countFilmList();	// 전체 데이터 개수
+		totalCount = actorListService.countActorList();	// 전체 데이터 개수
 		System.out.println("Debug: totalCount(" + totalCount + ")");
 		
 		// 마지막 페이지
@@ -54,10 +54,10 @@ public class FilmListServlet extends HttpServlet {
 			navLastPage = navLastPage - navPerPage;
 		}
 		
-		ArrayList<Film> returnFilmList = filmListService.getFilmList((currentPage - 1) * rowPerPage, rowPerPage);	// 영화 목록을 불러온다.
-		System.out.println("Debug: returnFilmList(" + returnFilmList + ")");
+		ArrayList<Actor> returnActorList = actorListService.getActorList((currentPage - 1) * rowPerPage, rowPerPage);	// 배우 목록을 불러온다.
+		System.out.println("Debug: returnActorList(" + returnActorList + ")");
 		
-		request.setAttribute("filmList", returnFilmList);	// request에 filmList 데이터를 담음
+		request.setAttribute("actorList", returnActorList);	// request에 actorList 데이터를 담음
 		
 		request.setAttribute("currentPage", currentPage);			// request에 currentPage 데이터를 담음
 		request.setAttribute("lastPage", lastPage);					// request에 lastPage 데이터를 담음
@@ -66,10 +66,10 @@ public class FilmListServlet extends HttpServlet {
 		request.setAttribute("navFirstPage", navFirstPage);			// request에 navFirstPage 데이터를 담음
 		request.setAttribute("navLastPage", navLastPage);			// request에 navLastPage 데이터를 담음
 		
-		request.getRequestDispatcher("/WEB-INF/views/auth/film/filmList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/auth/actor/actorList.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// doGet
+		// doPost
 	}
 }
